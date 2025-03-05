@@ -1,0 +1,50 @@
+// 变量定义
+$primary-blue: #2a7de1;
+$secondary-blue: #1a4a8d;
+$light-bg: #f8f9fa;
+
+// 重置样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+// 通用类
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: $primary-blue;
+  }
+}
+
+
+// 响应式处理
+@media (max-width: 768px) {
+  .mother-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .main-header {
+    flex-direction: column;
+    padding: 1rem;
+
+    .nav-menu {
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

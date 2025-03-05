@@ -1,0 +1,20 @@
+* {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+html {
+    font-size: clamp(12px, 0.625vw + 12px, 16px); // 12-16px 随视口渐变
+    overflow-x: hidden; // 防溢出兜底
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 16px;
+    }
+}

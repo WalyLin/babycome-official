@@ -1,0 +1,32 @@
+/* 设计稿基准尺寸 (可覆盖) */
+$design-width: 1920;
+// 变量定义
+$primary-blue: #2a7de1;
+$secondary-blue: #1a4a8d;
+$light-bg: #f8f9fa;
+
+/* 视口单位转换 */
+@function vw($px) {
+    @return calc($px / $design-width) * 100vw;
+}
+
+/* REM 转换 */
+@function rem($px, $base: 16) {
+    @return calc(min(100vw, 1920px) / $base * ($px / 1920) * 16);
+    /* 核心逻辑：当视口超过1920时锁定基准 */
+}
+
+@function font_rem($px, $base: 16) {
+    $min-size: 7px;
+    $max-size: 50px;
+
+    @return clamp(#{$min-size},
+        calc(min(100vw, 1920px) / $base * ($px / 1920) * 16) #{$max-size});
+}
+
+$f22: rem(22);
+$f20: rem(20);
+$f14: font_rem(14);
+$f12: font_rem(12);
+$f16: rem(16);
+$f30: rem(30);
