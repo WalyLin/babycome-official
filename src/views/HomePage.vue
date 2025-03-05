@@ -1,8 +1,7 @@
 <!-- src/views/HomePage.vue -->
 <template>
   <div class="home-page">
-   
-    
+       
     <!-- 主图Banner -->
     <section class="top-banner">
       
@@ -213,7 +212,7 @@ const laterSteps = ref([
   display: flex;
   justify-content: center;
   position: relative;
-  max-height: 700px;
+  
   height: rem(700);
     .banner-container{
       width:rem(1280);
@@ -248,15 +247,7 @@ const laterSteps = ref([
       }
 
     }
-  }
-
-  .banner-image {
-    z-index: -1;
-    width: rem(1890);
-    max-width: 1920px;
-    max-height: 700px;
-    position: absolute;
-  }
+  }  
 }
 
 .top-daily-news{
@@ -311,8 +302,7 @@ const laterSteps = ref([
   .advantage-cards {
     margin-top: rem(46);
     display: flex;
-    justify-content: space-between;        
-    max-width: 1280px;
+    justify-content: space-between;    
     overflow: hidden; 
     
 

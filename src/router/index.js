@@ -14,25 +14,25 @@ const routes = [
       },
 	  {
 	    path: '/about',
-	    name: 'about',
-	    component: () => import('@/views/HomePage.vue')
+	    name: 'About',
+	    component: () => import('@/views/About.vue')
 	  },
 	  {
 	    path: '/advantage',
-	    name: 'advantage',
-	    component: () => import('@/views/HomePage.vue')
+	    name: 'Advantage',
+	    component: () => import('@/views/Advantage.vue')
 	  },{
 	    path: '/structure',
-	    name: 'structure',
-	    component: () => import('@/views/HomePage.vue')
+	    name: 'Structure',
+	    component: () => import('@/views/Structure.vue')
 	  },{
 	    path: '/product',
-	    name: 'product',
-	    component: () => import('@/views/HomePage.vue')
+	    name: 'Product',
+	    component: () => import('@/views/Product.vue')
 	  },{
 	    path: '/news',
-	    name: 'news',
-	    component: () => import('@/views/HomePage.vue')
+	    name: 'News',
+	    component: () => import('@/views/News.vue')
 	  }	  
     ]
   }

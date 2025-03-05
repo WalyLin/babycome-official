@@ -12,7 +12,7 @@ $light-bg: #f8f9fa;
 
 /* REM 转换 */
 @function rem($px, $base: 16) {
-    @return calc(min(100vw, 1920px) / $base * ($px / 1920) * 16);
+    @return calc(min(100vw, 2560px) / $base * ($px / 1920) * 16);
     /* 核心逻辑：当视口超过1920时锁定基准 */
 }
 
