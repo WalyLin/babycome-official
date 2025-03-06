@@ -65,19 +65,19 @@
 
 		.container {
 			position: absolute;
-			padding-top:vw(27);
+			padding-top:rem(27);
 			max-width: 1200px;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			height: 83px;
+			height: rem(83);
 		}
 
 		.logo {
 			z-index: 1;
-			margin-left:vw(-220);
+			margin-left:rem(-220);
 			img {				
-				height: 50px;
+				height: rem(50);
 				width: auto;
 			}
 		}

@@ -9,7 +9,7 @@
           <div class="banner-content-1">
             <img src="@/assets/images/Georgian.png" alt="banner" class="content-image">  
             <div class="consult-btn-container">
-              <span class="consult-btn">立即咨询服务</span>
+              立即咨询服务
               <img src="" alt="">
             </div>
           </div>          
@@ -227,11 +227,10 @@ const laterSteps = ref([
       height:(120);
     }
     .consult-btn-container{
-      background-image: url('@/assets/images/hom_ljzx.png');
+      background: url('@/assets/images/hom_ljzx.png') no-repeat;
       background-size: cover;
       width: rem(267);
-      height:rem(70);
-      padding: 12px 30px;
+      height:rem(70);      
       font-size: $f22;
       display: flex;
       justify-content: flex-start;
@@ -267,7 +266,9 @@ const laterSteps = ref([
     justify-content: center;
     align-items: center;
 
-    img{      
+    img{
+      width:rem(82);
+      height: rem(62);
       margin-right: rem(17);
     }
     h3{
@@ -359,12 +360,19 @@ const laterSteps = ref([
       .card-btn-left{
         position: absolute;
         top:rem(-125);
-        left:rem(-40)
+        left:rem(-40);
+        img{
+          width:rem(21.5);
+        }
+        
       }
       .card-btn-right{
         position: absolute;
         top:rem(-125);
-        right:rem(-40)
+        right:rem(-40);
+        img{
+          width:rem(21.5);
+        }
       }
     }
 

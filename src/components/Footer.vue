@@ -60,7 +60,8 @@ const quickLinks = [
 </script>
 
 <style lang="scss" scoped>
-.app-footer {  
+.app-footer {
+  font-size: rem(16);
   background: #141319;
   color: white;  
 

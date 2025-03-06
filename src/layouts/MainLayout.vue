@@ -39,8 +39,7 @@ console.info(isMobile.value)
   display: flex;
   justify-content: center;
   flex-direction: column;     
-    min-height: 100vh;
-    max-width: 1920px;
+    
     margin: auto;
   .content-wrapper {
     flex: 1;
