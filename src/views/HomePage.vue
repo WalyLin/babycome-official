@@ -115,12 +115,12 @@
                 <p><span>{{ currentMama.age }}</span>岁</p>
                 <p>年龄</p>
               </div>
-              <p class="sep"></p>
+              <p v-if="!isMobile" class="sep"></p>
               <div>
                 <p><span>{{ currentMama.service_times }}</span>次</p>
                 <p>服务过家庭数</p>
               </div>
-              <p class="sep"></p>
+              <p v-if="!isMobile" class="sep"></p>
               <div>
                 <p><span>{{ currentMama.comment_rate }}</span>%</p>
                 <p>至今为止差评率</p>
@@ -147,6 +147,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { inject } from 'vue'
+const isMobile = inject('isMobile')
 
 const mamaList = [{
   id:1,
@@ -195,16 +197,29 @@ const laterSteps = ref([
 <style lang="scss" scoped>
 
 .home-page{
-  margin: auto;
-  width:rem(1920);
+  margin: auto;  
   z-index: 0;
   position: relative;
   background: #F4F5FA;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: rem(39);
+  padding-bottom: rem(39);    
 }
+
+section{
+  max-width: 1920px;
+  width: 100vw;
+  
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .home-page section{
+    width: 100vw !important;
+  }    
+}
+
+
 .top-banner {
   background: url('@/assets/images/banner1.png') no-repeat;
   background-size: cover;
@@ -218,13 +233,25 @@ const laterSteps = ref([
       width:rem(1280);
     }
   .banner-content {
-    width:rem(1280);
+    width:rem(1280);    
     display: flex;
     align-items: center;
+    @media (max-width: $mobile-breakpoint) {
+      width: 100vw;
+    }
+    .banner-content-1{
+      display: flex;
+      flex-direction: column;
+      @media(max-width: $mobile-breakpoint){
+        align-items: center;
+      }
+    }
 
     .content-image{
       width:rem(660);
-      height:(120);
+      @media(max-width: $mobile-breakpoint){
+        width: 80%;
+      }
     }
     .consult-btn-container{
       background: url('@/assets/images/hom_ljzx.png') no-repeat;
@@ -250,7 +277,7 @@ const laterSteps = ref([
 }
 
 .top-daily-news{
-  border-radius: 20px;
+  border-radius: 20px;  
   width:rem(1280);
   display: flex;  
   padding: rem(45) rem(59);
@@ -297,7 +324,6 @@ const laterSteps = ref([
     color:#A7A8B8;
     font-size: $f16;
     text-align: center;
-    letter-spacing:2px;
   }
 
   .advantage-cards {
@@ -308,8 +334,7 @@ const laterSteps = ref([
     
 
     .card {
-      width: rem(245);
-      height:rem(245);
+      width: rem(245);      
       background: #FAFAFD;
       padding: rem(21);
       border-radius: rem(25);
@@ -408,9 +433,16 @@ const laterSteps = ref([
   .love-mama-wrap{
     background: url('@/assets/images/axmm.png') no-repeat;
     background-size: cover;    
-    width:rem(1920);
-    height:rem(739);
+    width:100%;
+    max-width: 1920px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: rem(22);
+    @media(max-width: $mobile-breakpoint){
+      width:100vw;
+    }
   }
 
   .love-mama-head{
@@ -429,12 +461,18 @@ const laterSteps = ref([
   }
 
   .love-mama-content{
-    display: flex;
-    justify-content: start;    
-    margin-left: rem(320);
+    display: flex;        
     padding-top:rem(5);
     width: rem(1280);
-    height:rem(450);
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(255, 255, 255, 80%)50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: rem(20);
+    @media(max-width: 980px){
+      width: 95vw;
+    }
 
     .mama-card{
       width:rem(280);
@@ -475,8 +513,11 @@ const laterSteps = ref([
     }
 
     .mama-card-tiao {
+      display: flex;
+      flex-direction: column;
       margin-left: rem(3);
       div{
+        flex: 1;
         height:rem(150);
         width:rem(4);
         background-color: #B9DAFF;
@@ -488,11 +529,17 @@ const laterSteps = ref([
 
     .mama-detail{
       display: flex;
-      flex-direction: column;
+      flex-direction: column;      
+      @media(max-width: 980px){
+        
+        overflow: hidden;
+        padding-right: 13px;
+      }
 
       .mama-detail-title{
-        padding-top: rem(59);
+        padding-top: rem(59);        
         padding-left:rem(31);
+        white-space: nowrap;
         font-weight: bold;
         font-size: $f22;
         color: #050F3F;        
@@ -516,9 +563,12 @@ const laterSteps = ref([
       .mama-win{
         padding-left:rem(31);
         padding-bottom: rem(91);
+        @media(max-width: 980px){
+          padding-bottom: 6px;
+        }
         .mama-win-item{
-          width: rem(198);
-          height:rem(45);
+          padding:rem(2) rem(15);
+          height:rem(45);          
           line-height: rem(45);
           text-align: center;
           font-size: $f16;
@@ -527,15 +577,17 @@ const laterSteps = ref([
           color:#FFFFFF;
           background-color: #4B63FF;
           border-radius: rem(22);
+          margin-bottom:2px;
         }
       }
       .mama-detail-comment{
         display: flex;
         justify-content: start;
-        padding-left:rem(31);
+        flex-wrap: wrap;
+        padding-left:rem(31);        
         div{
           height:rem(58);
-          margin-left:rem(78);
+          margin-left:rem(78);          
           p{
             color:#646A89;
             font-size: $f16;
@@ -620,6 +672,9 @@ const laterSteps = ref([
   align-items: center;
   img{
     width: rem(1280);
+    @media(max-width: $mobile-breakpoint){
+      width: 90vw;
+    }
   }
   h3 {
     text-align: center;

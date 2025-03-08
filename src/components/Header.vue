@@ -25,13 +25,8 @@
 </template>
 
 <script setup>
-	import {
-		ref,
-		computed
-	} from 'vue'
-	import {
-		useStore
-	} from '@/store/dataStore'
+	import {ref,computed} from 'vue'
+	import {useStore} from '@/store/dataStore'
 
 	const store = useStore()
 	const navLinks = store.navLinks
@@ -57,7 +52,7 @@
 	.app-header {
 		position: relative;
 		font-family: yahei;
-		font-size: 16px;
+		font-size: $f16;
 		top: 0;
 		z-index: 1000;		
 		display: flex;
@@ -66,31 +61,46 @@
 		.container {
 			position: absolute;
 			padding-top:rem(27);
-			max-width: 1200px;
+			width:rem(1280);
+			max-width: 1280px;
 			display: flex;
-			justify-content: flex-start;
+			justify-content: space-between;
 			align-items: center;
 			height: rem(83);
-		}
-
-		.logo {
-			z-index: 1;
-			margin-left:rem(-220);
-			img {				
-				height: rem(50);
-				width: auto;
+			@media(max-width: $mobile-breakpoint){
+				width: 100vw;
 			}
 		}
 
-		.desktop-nav {	
-			margin-top:vw(-16);
+		.logo {
+			img {				
+				height: rem(50);
+				width:rem(166);
+				width: auto;
+			}
+			@media (max-width: $mobile-breakpoint) {
+				img{
+					margin-left:rem(20);
+					height: rem(30);
+					width:rem(110);
+				}
+			}
+		}
+
+		.desktop-nav {
+			width:rem(900);
+			padding-right: rem(200);
 			display: flex;
-			gap: vw(60);
-			margin-left: vw(100);
+			justify-content: space-around;
+			margin-left: rem(40);
+			@media(max-width: $mobile-breakpoint){
+				padding-right: rem(20);
+			}
 
 			.nav-link {
 				color: rgba(255, 255, 255);
 				text-decoration: none;
+				padding: 2px;
 				transition: opacity 0.3s;
 				position: relative;
 
@@ -132,12 +142,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.desktop-nav {
-			display: none !important;
-		}
-
-		.mobile-menu-btn {
-			display: block !important;
-		}
+		
 	}
 </style>

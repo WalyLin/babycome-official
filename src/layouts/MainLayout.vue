@@ -21,15 +21,18 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { useStore } from '@/store/dataStore'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 
+
 const store = useStore()
 const isMobile = computed(() => store.isMobile)
+store.checkMobile()
 console.info(isMobile.value)
+provide('isMobile', isMobile)
 </script>
 
 <style lang="scss">
@@ -38,7 +41,9 @@ console.info(isMobile.value)
 .main-layout {
   display: flex;
   justify-content: center;
-  flex-direction: column;     
+  flex-direction: column;
+  overflow: hidden;
+  width: 100vw;
     
     margin: auto;
   .content-wrapper {

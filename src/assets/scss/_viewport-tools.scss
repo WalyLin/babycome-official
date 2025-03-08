@@ -1,29 +1,115 @@
-/* 设计稿基准尺寸 (可覆盖) */
-$design-width: 1920;
-// 变量定义
+
+// 方案1 开始 - --------------------------------------------------
+// /* 设计稿基准尺寸 (可覆盖) */
+// $design-width: 1920; // 注意：此处应为无单位数值（与设计稿逻辑匹配）
+
+// // 变量定义
+// $primary-blue: #2a7de1;
+// $secondary-blue: #1a4a8d;
+// $light-bg: #f8f9fa;
+
+// // 定义断点
+// $mobile-breakpoint: 768px;
+// $tablet-breakpoint: 1024px;
+
+// /* 视口单位转换 */
+// @function vw($px) {
+//   $ratio: $px / $design-width * 100;
+//   @return calc(#{$ratio} * 1vw);
+// }
+
+// /* REM 转换 */
+// @function rem($px, $base: 16) {
+//   @return calc(min(100vw, 1920px) / $base * ($px / 1920) * 16);
+// }
+
+// // PC 端默认逻辑
+// html {
+//   font-size: clamp(12px, calc(16px * (100vw / #{$design-width})), 16px);
+// }
+
+// // 手机端样式
+// @media (max-width: $mobile-breakpoint) {
+//   @function rem($px, $base: 16) {
+//     $mobile-design-width: 375; // 无单位数值
+//     @return calc( #{$px} / #{$mobile-design-width} * 100vw / #{$base} );
+//   }
+
+//   html {
+//     font-size: clamp(14px, calc( (16 / 375) * 100vw ), 16px);
+//   }
+// }
+
+// // 平板端样式
+// @media (max-width: $tablet-breakpoint) and (min-width: $mobile-breakpoint + 1) {
+//   @function rem($px, $base: 16) {
+//     $tablet-design-width: 768; // 无单位数值
+//     @return calc( #{$px} / #{$tablet-design-width} * 100vw / #{$base} );
+//   }
+
+//   html {
+//     font-size: clamp(14px, calc( (16 / 768) * 100vw ), 16px);
+//   }
+// }
+
+// 方案1 结束 - --------------------------------------------------
+
+
+
+// 方案2 开始 - --------------------------------------------------
+
+// // 变量定义
 $primary-blue: #2a7de1;
 $secondary-blue: #1a4a8d;
 $light-bg: #f8f9fa;
 
-/* 视口单位转换 */
-@function vw($px) {
-    @return calc($px / $design-width) * 100vw;
+// 设计稿基准尺寸（无单位数值）
+$pc-design-width: 1920; // PC端设计稿宽度
+$tablet-design-width: 768; // 平板设计稿宽度
+$mobile-design-width: 375; // 手机设计稿宽度
+
+// 断点定义
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+
+// PC端默认逻辑（1920设计稿）
+html {
+    font-size: clamp(14px, calc( (16 / $pc-design-width) * 100vw ), 18px);
+    // 当视口=1920px时，font-size=16px（基准值）
+    // 最小14px，最大18px，防止4K屏幕字过大
+  }
+  
+  // 平板端适配
+  @media (max-width: $tablet-breakpoint) {
+    html {
+      font-size: clamp(14px, calc( (16 / $tablet-design-width) * 100vw ), 16px);
+      // 视口=768px时，font-size=16px
+      // 最小14px，防止过度缩小
+    }
+  }
+  
+  // 手机端适配（核心修复区）
+  @media (max-width: $mobile-breakpoint) {
+    html {
+      font-size: clamp(16px, calc( (18 / $mobile-design-width) * 100vw ), 20px);
+      // 重点调整：提高手机端基准字号和最小值
+      // 当视口=375px时，font-size=18px（原16px导致过小）
+      // 最小16px，最大20px，确保可读性
+    }
+  }
+
+  @function vw($px) {
+    $ratio: $px / $pc-design-width * 100;
+    @return calc(#{$ratio} * 1vw);
+}   
+
+
+@function rem($px) {
+    @return calc($px / 16 * 1rem);
+    // 直接按基准字号比例转换
+    // 例：设计稿32px → 2rem（实际显示32px当根字号16px时）
 }
-
-/* REM 转换 */
-@function rem($px, $base: 16) {
-    @return calc(min(100vw, 2560px) / $base * ($px / 1920) * 16);
-    /* 核心逻辑：当视口超过1920时锁定基准 */
-}
-
-@function font_rem($px, $base: 16) {
-    $min-size: 7px;
-    $max-size: 50px;
-
-    @return clamp(#{$min-size},
-        calc(min(100vw, 1920px) / $base * ($px / 1920) * 16) #{$max-size});
-}
-
+// 方案2 结束 - --------------------------------------------------
 $f22: rem(22);
 $f20: rem(20);
 $f14: rem(14);
