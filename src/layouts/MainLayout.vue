@@ -1,7 +1,9 @@
 <template>
   <div class="main-layout">
     <!-- 头部导航 -->
-    <Header />
+    <Header  v-if="!isMobile" />
+    <!-- 移动端菜单 -->
+    <MobileMenu v-if="isMobile" />
     
     <!-- 页面内容 -->
     <main class="content-wrapper">
@@ -14,9 +16,7 @@
 
     <!-- 页脚 -->
     <Footer />
-
-    <!-- 移动端菜单 -->
-    <MobileMenu v-if="isMobile" />
+    
   </div>
 </template>
 

@@ -227,11 +227,17 @@ section{
   display: flex;
   justify-content: center;
   position: relative;
-  
   height: rem(700);
-    .banner-container{
-      width:rem(1280);
-    }
+
+  @media(max-width: $mobile-breakpoint){
+    background-size: 125% 100%;
+    height: rem(400);
+  }
+  
+  
+  .banner-container{
+    width:rem(1280);
+  }
   .banner-content {
     width:rem(1280);    
     display: flex;
@@ -244,6 +250,7 @@ section{
       flex-direction: column;
       @media(max-width: $mobile-breakpoint){
         align-items: center;
+        margin-top:rem(100)
       }
     }
 
@@ -286,25 +293,40 @@ section{
   background-color: #FFF;
   position: relative;
   transform: translate(0, -50%);
+  @media(max-width: $mobile-breakpoint){  
+    transform:none;
+    padding: 22px;
+  }
 
-  .top-daily-news-item{
-    
+  .top-daily-news-item{    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    @media(max-width: $mobile-breakpoint){  
+      flex-direction: column;
+    }
     img{
       width:rem(82);
       height: rem(62);
       margin-right: rem(17);
+      @media(max-width: $mobile-breakpoint){  
+        margin-right: 0;
+      }
     }
     h3{
       font-size: $f20;
       color:#050F3F;
+      @media(max-width: $mobile-breakpoint){  
+        text-align: center;
+      }
+      
     }
     p{  
       color: #A7A8B8;
       font-size: $f14;
+      @media(max-width: $mobile-breakpoint){  
+        padding: 5px 22px 0;
+      }
     }
   }
 }
@@ -312,6 +334,9 @@ section{
   width: rem(1280);
   margin-top:rem(-6);
   padding-bottom: rem(46);
+  @media(max-width: $mobile-breakpoint){
+    margin-top: rem(30);
+  }
 
   h2 {
     font-weight: normal;
@@ -328,6 +353,7 @@ section{
 
   .advantage-cards {
     margin-top: rem(46);
+    padding: 0 rem(62);
     display: flex;
     justify-content: space-between;    
     overflow: hidden; 
@@ -385,7 +411,7 @@ section{
       .card-btn-left{
         position: absolute;
         top:rem(-125);
-        left:rem(-40);
+        left:5px;
         img{
           width:rem(21.5);
         }
@@ -394,7 +420,7 @@ section{
       .card-btn-right{
         position: absolute;
         top:rem(-125);
-        right:rem(-40);
+        right:5px;
         img{
           width:rem(21.5);
         }
@@ -587,7 +613,12 @@ section{
         padding-left:rem(31);        
         div{
           height:rem(58);
-          margin-left:rem(78);          
+          margin-left:rem(78);
+          @media(max-width: $mobile-breakpoint){
+            display: flex;
+            align-items: baseline;
+            margin-left:rem(38);
+          }
           p{
             color:#646A89;
             font-size: $f16;
