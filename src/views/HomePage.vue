@@ -43,42 +43,15 @@
       </div>
     </section>
 
+
+
     <!-- 核心优势 -->
+    
     <section class="core-advantages">
+      
       <h2>为什么要选择贝康？</h2>
       <p>BabyCome永远保持三个核心高效生产，顺利生产，优质生产</p>
-      <div class="advantage-cards">
-        <div class="card">
-          <img src="@/assets/images/xing1.png" alt="" class="card-icon-sm">
-          <h3>保障海外求子合法权益</h3>
-          <p>双律师坐镇，海外求子保障合法权益，规避不良机构，降低双国家政策突变导致诉讼纠纷子不归家。</p>
-        </div>
-        
-        <div class="card">
-          <img src="@/assets/images/xing2.png" alt="">
-          <h3>爱心妈妈充足</h3>
-          <p>常年上百优质爱心妈妈储备常驻第比利斯，无需担心移植等待，移植加收费用等问题。</p>
-        </div>
-        <div class="card">
-          <img src="@/assets/images/xing2.png" alt="">
-          <h3>孕期无忧</h3>
-          <p>爱心妈妈统一管理，营养日常更有保障</p>
-        </div>
-        <div class="card">
-          <img src="@/assets/images/xing2.png" alt="">
-          <h3>双院区办公机构</h3>
-          <p>全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。</p>
-        </div>
-        <div class="card">
-          <img src="@/assets/images/xing2.png" alt="">
-          <h3>资金实力雄厚</h3>
-          <p>八大付款节点，贯穿整个项目，无需担心项目中断或机构跑路风险</p>
-        </div>        
-      </div>
-      <div class="card-change">
-        <a class="card-btn-left"><img src="@/assets/images/hom_lj.png" alt=""></a>
-        <a class="card-btn-right"><img src="@/assets/images/hom_rj.png" alt=""></a>
-      </div>
+      <CardCarousel />      
       <div class="more">了解更多</div>
     </section>
 
@@ -146,6 +119,7 @@
 </template>
 
 <script setup>
+import CardCarousel from '@/components/CardCarousel.vue';
 import { ref } from 'vue'
 import { inject } from 'vue'
 const isMobile = inject('isMobile')
@@ -179,19 +153,6 @@ const mamaList = [{
 const currentMama = ref({});
 currentMama.value=mamaList[0]
 
-const frontSteps = ref([
-  { id: '01', title: '签约', desc: '正式建立服务关系' },
-  { id: '02', title: '取精/取卵', desc: '专业医疗团队操作' },
-  { id: '03', title: '选精/选卵', desc: '优质资源选择' },
-  { id: '04', title: '胚胎移植', desc: '专业胚胎移植手术' }
-])
-
-const laterSteps = ref([
-  { id: '05', title: '确认怀孕', desc: '医学检测确认' },
-  { id: '06', title: '怀孕12周', desc: '首阶段完成' },
-  { id: '07', title: '怀孕24周', desc: '中期检测' },
-  { id: '08', title: '生产后3日', desc: '最终阶段完成' }
-])
 </script>
 
 <style lang="scss" scoped>
@@ -351,50 +312,7 @@ section{
     text-align: center;
   }
 
-  .advantage-cards {
-    margin-top: rem(46);
-    padding: 0 rem(62);
-    display: flex;
-    justify-content: space-between;    
-    overflow: hidden; 
-    
-
-    .card {
-      width: rem(245);      
-      background: #FAFAFD;
-      padding: rem(21);
-      border-radius: rem(25);
-      
-      text-align: left;
-      img{
-        width: rem(80);
-        height: rem(80);
-      }
-      .card-icon-sm{
-        width:rem(47);
-        height:rem(47);
-      }
-
-      h3 {
-        margin-top:rem(21);
-        color:#050F3F;
-        font-size: $f16;
-        margin-bottom: rem(17);
-      }
-      p{
-        color: #80808C;
-        font-size: $f12;
-        text-align:left;
-        letter-spacing:0px;
-      }
-    }
-    .card:nth-child(1){
-      background-color: #7F7F7F;
-      h3{color:#FFFFFF;}
-      p{color:#F5F5F5;}
-    }
-    
-  }
+  
 
   .card-change{
       display: flex;
@@ -454,7 +372,7 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height:rem(729);    
+  
 
   .love-mama-wrap{
     background: url('@/assets/images/axmm.png') no-repeat;

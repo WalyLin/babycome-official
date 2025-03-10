@@ -69,6 +69,8 @@ $tablet-design-width: 768; // 平板设计稿宽度
 $mobile-design-width: 375; // 手机设计稿宽度
 
 // 断点定义
+// $mobile-breakpoint: 768px;
+$mobile-sm-breakpoint: 500px;
 $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1024px;
 
