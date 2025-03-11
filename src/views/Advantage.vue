@@ -262,19 +262,19 @@ const list = [
 {
   title: 'invitro clinic',
   desc: 'invitro clinic是格鲁吉亚第一家进行辅助生殖的专门医院。院长 Natalia进行了格鲁吉亚第一次人工移植手术，具有悠久的历史和世界领先的专业辅助生殖技术。',
-  icon:'@/assets/images/advantage/yy1.png',
+  icon:'/images/yy1.png',
   tags:['医生数量多，移植速度快','移植成功率非常稳定','拥有超高的移植成功率'],
 },
 {
   title: 'zhordania clinic',
   desc: 'zhordania clinic 前身是1958年由zhordania教授成立的人类生殖研究所，距今将近70年的历史。同 时 格 鲁 吉 亚 国 家 生 殖 医 学 中 心 也 设 立 在zhordania clinic。',
-  icon:'@/assets/images/advantage/yy2.png',
+  icon:'/images/yy2.png',
   tags:['医生数量多，移植速度快','移植成功率非常稳定','拥有超高的移植成功率'],
 },
 {
   title: 'beta clinic',
   desc: 'invitro clinic是格鲁吉亚第一家进行辅助生殖的专门医院。院长 Natalia进行了格鲁吉亚第一次人工移植手术，具有悠久的历史和世界领先的专业辅助生殖技术。',
-  icon:'@/assets/images/advantage/yy3.png',
+  icon:'/images/yy3.png',
   tags:['医生数量多，移植速度快','移植成功率非常稳定','拥有超高的移植成功率'],
 },
   
