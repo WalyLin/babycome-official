@@ -1,4 +1,3 @@
-
 // 方案1 开始 - --------------------------------------------------
 // /* 设计稿基准尺寸 (可覆盖) */
 // $design-width: 1920; // 注意：此处应为无单位数值（与设计稿逻辑匹配）
@@ -76,41 +75,42 @@ $tablet-breakpoint: 1024px;
 
 // PC端默认逻辑（1920设计稿）
 html {
-    font-size: clamp(14px, calc( (16 / $pc-design-width) * 100vw ), 18px);
-    // 当视口=1920px时，font-size=16px（基准值）
-    // 最小14px，最大18px，防止4K屏幕字过大
-  }
-  
-  // 平板端适配
-  @media (max-width: $tablet-breakpoint) {
-    html {
-      font-size: clamp(14px, calc( (16 / $tablet-design-width) * 100vw ), 16px);
-      // 视口=768px时，font-size=16px
-      // 最小14px，防止过度缩小
-    }
-  }
-  
-  // 手机端适配（核心修复区）
-  @media (max-width: $mobile-breakpoint) {
-    html {
-      font-size: clamp(16px, calc( (18 / $mobile-design-width) * 100vw ), 20px);
-      // 重点调整：提高手机端基准字号和最小值
-      // 当视口=375px时，font-size=18px（原16px导致过小）
-      // 最小16px，最大20px，确保可读性
-    }
-  }
+  font-size: clamp(14px, calc((16 / $pc-design-width) * 100vw), 18px);
+  // 当视口=1920px时，font-size=16px（基准值）
+  // 最小14px，最大18px，防止4K屏幕字过大
+}
 
-  @function vw($px) {
-    $ratio: $px / $pc-design-width * 100;
-    @return calc(#{$ratio} * 1vw);
-}   
+// 平板端适配
+@media (max-width: $tablet-breakpoint) {
+  html {
+    font-size: clamp(14px, calc((16 / $tablet-design-width) * 100vw), 16px);
+    // 视口=768px时，font-size=16px
+    // 最小14px，防止过度缩小
+  }
+}
+
+// 手机端适配（核心修复区）
+@media (max-width: $mobile-breakpoint) {
+  html {
+    font-size: clamp(16px, calc((18 / $mobile-design-width) * 100vw), 20px);
+    // 重点调整：提高手机端基准字号和最小值
+    // 当视口=375px时，font-size=18px（原16px导致过小）
+    // 最小16px，最大20px，确保可读性
+  }
+}
+
+@function vw($px) {
+  $ratio: $px / $pc-design-width * 100;
+  @return calc(#{$ratio} * 1vw);
+}
 
 
 @function rem($px) {
-    @return calc($px / 16 * 1rem);
-    // 直接按基准字号比例转换
-    // 例：设计稿32px → 2rem（实际显示32px当根字号16px时）
+  @return calc($px / 16 * 1rem);
+  // 直接按基准字号比例转换
+  // 例：设计稿32px → 2rem（实际显示32px当根字号16px时）
 }
+
 // 方案2 结束 - --------------------------------------------------
 $f22: rem(22);
 $f20: rem(20);

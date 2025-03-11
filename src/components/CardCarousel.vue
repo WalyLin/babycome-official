@@ -30,37 +30,37 @@ const cards = ref([
   {
     title: '保障海外求子合法权益',
     description: '双律师坐镇，海外求子保障合法权益，规避不良机构，降低双国家政策突变导致诉讼纠纷子不归家。',
-    icon: '/src/assets/images/xing1.png'
+    icon: '/images/xing1.png'
   },
   {
     title: '爱心妈妈充足',
     description: '常年上百优质爱心妈妈储备常驻第比利斯，无需担心移植等待，移植加收费用等问题。',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   },
   {
     title: '孕期无忧',
     description: '爱心妈妈统一管理，营养日常更有保障',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   },
   {
     title: '双院区办公机构',
     description: '全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   },
   {
     title: '双院区办公机构',
     description: '全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   },
   {
     title: '双院区办公机构',
     description: '全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   },
   {
     title: '资金实力雄厚',
     description: '八大付款节点，贯穿整个项目，无需担心项目中断或机构跑路风险',
-    icon: '/src/assets/images/xing2.png'
+    icon: '/images/xing2.png'
   }
 ]);
 

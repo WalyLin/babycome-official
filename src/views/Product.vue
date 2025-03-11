@@ -135,6 +135,27 @@
       <p class="desc">这里放基础服务的简要描述详情</p>
       <div class="addservice-content">
         <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
           <div class="addservice-content-item-info">
             <p class="addservice-content-item-info-dot"></p>            
             <p class="addservice-content-item-info-desc">
@@ -143,9 +164,170 @@
             </p>
           </div>
         </div>
+
+        <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+        </div>
+
+        <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+        </div>
+
+        <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+        </div>
+
+        <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+        </div>
+
+        <div class="addservice-content-item">
+          <div class="addservice-content-item-title">
+            <p class="addservice-content-item-title-price">
+              <img src="@/assets/images/product/zzk-icon.png" alt="">
+              优生套餐：$2000
+            </p>
+            <p class="addservice-content-item-title-discount">8折</p>          
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+          <div class="addservice-content-item-info">
+            <p class="addservice-content-item-info-dot"></p>            
+            <p class="addservice-content-item-info-desc">
+              【<span class="addservice-content-item-info-price">$600</span>】
+            供精供卵者信息材料核查分析（核查卵m之前取卵数量以及胚胎合成情况着床情况）
+            </p>
+          </div>
+        </div>
+        
       </div>
      </section>
-     <section class="pay"></section>
+     <section class="pay">
+      <p class="title">付款流程</p>
+      <p class="desc">付款流程透明，无隐藏消费，一站式费用</p>
+      <img src="@/assets/images/payment-process2.png" alt="">
+     </section>
 
 
 
@@ -271,7 +453,7 @@ section{
   
 }
 
-.service,.success,.base{
+.service,.success,.base,.addservice,.pay{
   padding-top: rem(67);
   width: 100%;
   max-width: 1280px;
@@ -367,7 +549,8 @@ section{
     border-radius: rem(10);
   
     @media(max-width: $mobile-breakpoint){
-      width: 90%;      
+      width: 90%;
+      margin-top: 15px;      
     }
 
     &-title{
@@ -384,7 +567,6 @@ section{
       @media(max-width: $mobile-breakpoint){
         font-size: 13px;
         height: 56px;
-        width: 80%;
       
       }
     }
@@ -440,6 +622,105 @@ section{
 .success{
   .base-content-1{
     background: linear-gradient(90deg, #B575E2 0%, #501D78 100%);
+  }
+}
+
+.addservice{
+  &-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &-item{
+      margin-top: 20px;
+      max-width: 632px;;
+      width: 48%;
+      min-height: rem(253);      
+      background-size: 100% 100%;
+      background-color: #FFF;
+      border-radius: rem(20);
+
+      &-title{
+        height: rem(52);
+        padding-right: 22px;                
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #FFF;
+        font-size: rem(18);
+
+        @media(max-width: $mobile-breakpoint){
+          padding-right: 5px;
+        }
+
+        &-price{          
+          padding-left: 27px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          width: rem(312);
+          font-weight: bold;
+          border-radius: 20px 0px 50px 0px;
+          background: linear-gradient(90deg, #4E87FF, #4B63FF);
+
+          @media(max-width: $mobile-breakpoint){
+            padding-left: 10px;
+          }
+
+          img{
+            width: rem(24);
+            margin-right: 8px;
+          }
+        }
+
+        &-discount{
+          font-weight: bold;
+          font-size: rem(16);
+          text-align: center;
+          width: 48px;
+          height: 29px;
+          line-height: 29px;
+          background-color: #42C47C;
+          border-radius: 20px;
+        }
+      }
+
+      &-info{
+        display: flex;
+        justify-content: start;
+        align-items: baseline;
+        padding: rem(14) rem(37);       
+
+        @media(max-width: $mobile-breakpoint){
+          padding: rem(10) rem(20);  
+        }
+
+        &-dot{
+          width:6px !important;
+          height: 6px !important;
+          border-radius: 3px;
+          background: #27BE4B;
+        } 
+        &-desc{
+          width: 90%;
+          color:#050F3F;
+          font-size: rem(16);
+          span{
+            font-weight: bold;
+            color:#0065FF;
+          }
+        }
+
+      }
+    }
+
+  }  
+}
+
+.pay{
+  img{
+    width: 100%;
   }
 }
   
