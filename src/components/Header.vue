@@ -96,7 +96,7 @@ body {
 	.container {
 		padding-top:rem(27);
 		padding:rem(27) 2rem 0;
-		width:rem(1280);
+		width: 100%;
 		max-width: 1280px;
 		display: flex;
 		justify-content: space-between;

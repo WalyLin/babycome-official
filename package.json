@@ -12,7 +12,9 @@
     "analyze": "vite build --mode analyze"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@vueuse/core": "^12.8.2",
+    "element-plus": "^2.9.6",
     "pinia": "^3.0.1",
     "sass": "^1.85.1",
     "swiper": "^11.2.5",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "terser": "^5.39.0",
+    "unplugin-auto-import": "^19.1.1",
+    "unplugin-vue-components": "^28.4.1",
     "vite": "^6.2.0"
   }
 }
