@@ -8,9 +8,8 @@
 
   <section class="leader">    
     <div class="leader-content">
-      <div class="leader-content-photo">
-        <img src="@/assets/images/about/leader.png" alt="">
-      </div>
+      <img class="leader-content-photo" src="@/assets/images/about/leader.png" alt="">
+      
       <div class="leader-content-info">
         <p class="leader-content-info-title">公司创始人 谭曙</p>
         <p class="leader-content-info-desc">毕业于加拿大蒙特利大学，英属哥伦比亚大学和多伦多大学，获得国际商法硕士和美法硕士学位，同时也是加拿大安大略省执业律师和公证员。</p>
@@ -135,9 +134,12 @@ section{
   justify-content: center;
   position: relative;
   height: rem(556);
-
+  
+  @media(max-width: $tablet-breakpoint){
+    height: rem(380);
+  }  
   @media(max-width: $mobile-breakpoint){
-    height: rem(400);
+    height: rem(280);
   }  
   
   .banner-container{
@@ -234,11 +236,17 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: $tablet-breakpoint) {
+      flex-direction: column;
+      height: auto;
+      justify-content: center;
+    }
     .leader-content-photo{
       height: 100%;
-      width: 413px;            
-      img{        
-        height: 100%;        
+      width: 413px;
+      margin-bottom: 20px;
+      @media(max-width: $mobile-breakpoint) {
+        width: 70%;
       }
     }
     .leader-content-info{
@@ -250,7 +258,10 @@ section{
       flex-direction: column;
       padding: rem(32);
       background-color: #FFF;
-
+      @media(max-width: $tablet-breakpoint){
+        width: 96%;
+        margin-left: 0;
+      }
 
       &-title{
         font-weight: bold;
@@ -266,11 +277,18 @@ section{
       &-show{
         display: flex;
         align-items: center;
+        @media(max-width: $mobile-breakpoint){
+          flex-direction: column;
+        }
         &-item{
           display: flex;
           flex-direction: column;
           align-items: center;
           margin-right: rem(20);
+          @media(max-width: $mobile-breakpoint){
+            justify-content: center;
+            margin-bottom: 20px;
+          }
           img{
             margin-right: rem(10);          
           }
@@ -302,6 +320,11 @@ section{
       padding: 40px 20px;
       margin-top: 20px;
   }
+  @media(max-width: $mobile-breakpoint){
+      height: auto;
+      padding: 40px 20px;
+      margin-top: 20px;
+  }
 
   .desc{
     font-size: rem(18);
@@ -313,7 +336,11 @@ section{
     max-width: 1280px;
     display: flex;
     justify-content: space-between;
-    // align-items: center;
+    
+    @media(max-width: $mobile-breakpoint){      
+      flex-direction: column;
+    }
+    
     .development-content-item{
       display: flex;
       flex-direction: column;
@@ -321,7 +348,10 @@ section{
       background-color: #FFF;
       border-radius: 20px;
       width: 32%;
-      // height: rem(408);
+      @media(max-width: $mobile-breakpoint){        
+        width: 100%;
+        margin-bottom: 20px;
+      }
 
       img{
         width: rem(63);
@@ -409,6 +439,9 @@ section{
     padding: rem(47);
     justify-content: center;
     align-items: center;
+    @media(max-width: $mobile-breakpoint){
+      padding: 20px;
+    }
     .speed-desc{
       width: 100%;
       max-width: 1160px;
@@ -420,9 +453,15 @@ section{
       max-width: 1160px;
       display: flex;
       justify-content: space-between;
-
+      @media(max-width: $mobile-breakpoint){
+        flex-direction: column;
+      }
       img{
         width: 32%;        
+        @media(max-width: $mobile-breakpoint){
+          width: 100%;
+          margin-bottom: 10px;
+        }
       }
     }
     .speed-s{
@@ -437,6 +476,9 @@ section{
       align-items: center;
       display: flex;
       justify-content: space-between;
+      @media(max-width: $mobile-breakpoint){
+        padding: 10px 0;
+      }
       p{text-align: center;}
 
     }

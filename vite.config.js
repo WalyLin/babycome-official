@@ -36,7 +36,7 @@ export default defineConfig({
     open: true,  // 自动打开浏览器
     proxy: {
       '/api': {
-        target: 'http://your-api-domain.com',
+        target: 'http://127.0.0.1:9502',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '')
       }

@@ -261,9 +261,14 @@ section{
   position: relative;
   height: rem(556);
 
-  @media(max-width: $mobile-breakpoint){
+  @media(max-width: $tablet-breakpoint){
     height: rem(400);
-  }  
+  }
+  @media(max-width: $mobile-breakpoint){
+    background-size: 200% 100%;
+    background-position: -344px;
+    height: rem(400);
+  }
   
   .banner-container{
     width:rem(1280);
@@ -275,12 +280,14 @@ section{
     align-items: center;
     @media (max-width: $tablet-breakpoint) {
       padding-left: 20px;
-
+    }
+    @media (max-width: $mobile-breakpoint) {
+      padding-left: 0;
     }
     .banner-content-1{
       display: flex;
       flex-direction: column;
-      @media(max-width: $mobile-breakpoint){
+      @media(max-width: $tablet-breakpoint){
         align-items: center;
         margin-top:rem(100)
       }

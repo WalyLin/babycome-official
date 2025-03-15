@@ -67,21 +67,39 @@ const quickLinks = [
 
   .content-wrap{
     height:rem(189);
+    @media(max-width: $mobile-breakpoint){
+      height: auto;
+    }
     .content{    
-      width: rem(960);
-      margin: auto;          
+      max-width: rem(960);
+      margin: auto;      
+      @media(max-width: $mobile-breakpoint){
+        display: flex;
+        flex-direction: column;
+      }
+          
       .infomation{
         padding-top:rem(33);
         width: rem(600);
-        float: left;        
+        float: left;       
+        @media(max-width: $mobile-breakpoint) {
+          width: 100%;
+          float: none;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          
+        }
         
         .item{
           display: flex;
           height:rem(40);
-          width: rem(251);
-          margin-bottom: rem(37);
-
+          width: 45%;
+          margin-bottom: rem(37);          
           float: left;
+          @media(max-width: $mobile-breakpoint){
+            margin-left:12px
+          }
           img{
             width: rem(43);
             height: rem(43);
@@ -90,6 +108,9 @@ const quickLinks = [
 
           p{
             white-space: nowrap;
+            @media(max-width: $mobile-breakpoint){
+              white-space: wrap;
+            }
           }
         }
       }
@@ -99,7 +120,9 @@ const quickLinks = [
         display: flex;      
         justify-content: space-around;
         align-items: center;
-
+        @media(max-width: $mobile-breakpoint){
+          padding: 10px;
+        }
         img{
           width: rem(133);
           height: rem(133);

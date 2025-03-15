@@ -6,14 +6,15 @@
     <section class="top-banner">      
       <div class="banner-content">
           <div class="banner-content-1">
-            <img src="@/assets/images/Georgian.png" alt="banner" class="content-image">  
+            <div class="banner-title">贝康套餐及报价</div> 
+            <div class="banner-subtitle">BABYCOME</div>             
             <div class="consult-btn-container">
               立即咨询服务
               <img src="" alt="">
             </div>
           </div>          
         </div>                        
-    </section>   
+    </section>    
 
      <section class="service">
        <p class="title">基础服务套餐</p>
@@ -383,42 +384,73 @@ section{
 }
 .top-banner {
   background: url('@/assets/images/banner4.png') no-repeat;
-  background-size: cover;
-  width:rem(1920);
+  background-size: 100% 100%;
+  width:100% ;
+  max-width: 1920px;
   display: flex;
   justify-content: center;
   position: relative;
-  height: rem(700);
+  height: rem(660);
 
-  @media(max-width: $mobile-breakpoint){
+  @media(max-width: $tablet-breakpoint){
     height: rem(400);
-  }  
+  }
+  @media(max-width: $mobile-breakpoint){
+    background-size: 200% 100%;
+    background-position: -344px;
+    height: rem(400);
+  }
   
   .banner-container{
     width:rem(1280);
   }
   .banner-content {
-    width:rem(1280);    
+    width:100%;
+    max-width: 1280px;
     display: flex;
     align-items: center;
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 20px;
+    }
     @media (max-width: $mobile-breakpoint) {
-      width: 100vw;
+      justify-content:center;
+      padding-left: 0;
     }
     .banner-content-1{
       display: flex;
       flex-direction: column;
-      @media(max-width: $mobile-breakpoint){
+      @media(max-width: $tablet-breakpoint){
         align-items: center;
         margin-top:rem(100)
       }
-    }
 
-    .content-image{
-      width:rem(660);
-      @media(max-width: $mobile-breakpoint){
-        width: 80%;
+      .banner-title{
+        color: #FFF;
+        font-weight: bold;
+        font-size: rem(68);
+        text-shadow: 0px 3px 7px rgba(36,100,173,0.79);
+        font-style: italic;
+        @media(max-width: $mobile-breakpoint){
+          font-size: rem(50);        
+        }
+      }
+      .banner-subtitle{
+        color: #FFF;
+        font-weight: bold;
+        font-size: rem(48);
+        text-shadow: 0px 3px 7px rgba(36,100,173,0.79);
+        font-style: italic;
+        opacity: 0.46;
+        margin-bottom: rem(35);
+        @media(max-width: $mobile-breakpoint){
+          font-size: rem(35);
+          text-align: center;
+        }
+
       }
     }
+
+    
     .consult-btn-container{
       background: url('@/assets/images/hom_ljzx.png') no-repeat;
       background-size: cover;
@@ -721,6 +753,9 @@ section{
 .pay{
   img{
     width: 100%;
+    @media(max-width: $mobile-breakpoint){
+      width:96%
+    }
   }
 }
   

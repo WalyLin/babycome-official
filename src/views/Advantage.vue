@@ -6,14 +6,15 @@
   <section class="top-banner">      
     <div class="banner-content">
         <div class="banner-content-1">
-          <img src="@/assets/images/Georgian.png" alt="banner" class="content-image">  
+          <div class="banner-title">贝康套餐及报价</div> 
+          <div class="banner-subtitle">BABYCOME</div>             
           <div class="consult-btn-container">
             立即咨询服务
             <img src="" alt="">
           </div>
         </div>          
       </div>                        
-  </section>   
+  </section>  
   <!-- 公司优势 -->
   <section class="advantage-carousel">
     <h3>公司优势</h3>
@@ -48,8 +49,7 @@
                 <div class="other-detail" v-show="cardIndex !== currentSlideIndex">
                   <h3 class="other-detail-title">{{ card.title }}</h3>
                   <p class="other-detail-bar"></p>
-                </div>
-                
+                </div>                
               </div>
             </div>
           </div>
@@ -226,11 +226,11 @@ const swiperOptions = {
   slidesPerView: 1,
   spaceBetween: 30,
   autoplay: {
-    delay: 11000000,
+    delay: 3000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true
   },
-  loop: true,
+  loop: false,
   pagination: {
     clickable: true
   }
@@ -240,6 +240,7 @@ const swiperOptions = {
 const onSwiper = (swiper) => {
   swiperInstance = swiper;
   swiper.on('slideChange', () => {
+    console.info('当前幻灯片索引：', swiper.activeIndex);
     currentSlideIndex.value = swiper.activeIndex;
   });
 };
@@ -307,43 +308,74 @@ section{
 
 
 .top-banner {
-  background: url('@/assets/images/advantage/banner2.png') no-repeat;
-  background-size: cover;
-  width:rem(1920);
+  background: url('@/assets/images/banner2.png') no-repeat;
+  background-size: 100% 100%;
+  width:100% ;
+  max-width: 1920px;
   display: flex;
   justify-content: center;
   position: relative;
-  height: rem(700);
+  height: rem(660);
 
-  @media(max-width: $mobile-breakpoint){
+  @media(max-width: $tablet-breakpoint){
     height: rem(400);
-  }  
+  }
+  @media(max-width: $mobile-breakpoint){
+    background-size: 200% 100%;
+    background-position: -344px;
+    height: rem(400);
+  }
   
   .banner-container{
     width:rem(1280);
   }
   .banner-content {
-    width:rem(1280);    
+    width:100%;
+    max-width: 1280px;
     display: flex;
     align-items: center;
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 20px;
+    }
     @media (max-width: $mobile-breakpoint) {
-      width: 100vw;
+      justify-content:center;
+      padding-left: 0;
     }
     .banner-content-1{
       display: flex;
       flex-direction: column;
-      @media(max-width: $mobile-breakpoint){
+      @media(max-width: $tablet-breakpoint){
         align-items: center;
         margin-top:rem(100)
       }
-    }
 
-    .content-image{
-      width:rem(660);
-      @media(max-width: $mobile-breakpoint){
-        width: 80%;
+      .banner-title{
+        color: #FFF;
+        font-weight: bold;
+        font-size: rem(68);
+        text-shadow: 0px 3px 7px rgba(36,100,173,0.79);
+        font-style: italic;
+        @media(max-width: $mobile-breakpoint){
+          font-size: rem(50);        
+        }
+      }
+      .banner-subtitle{
+        color: #FFF;
+        font-weight: bold;
+        font-size: rem(48);
+        text-shadow: 0px 3px 7px rgba(36,100,173,0.79);
+        font-style: italic;
+        opacity: 0.46;
+        margin-bottom: rem(35);
+        @media(max-width: $mobile-breakpoint){
+          font-size: rem(35);
+          text-align: center;
+        }
+
       }
     }
+
+    
     .consult-btn-container{
       background: url('@/assets/images/hom_ljzx.png') no-repeat;
       background-size: cover;
@@ -366,6 +398,7 @@ section{
     }
   }  
 }
+
 
 .advantage-carousel {
   width: 100%;
@@ -414,7 +447,7 @@ section{
         height: 12px;
         background: rgba(#2c3e50, 0.3);
         opacity: 1;
-        transition: all 0.3s;                
+        transition: all 0.3s;     
       }
       .swiper-pagination-bullet-active {
         background: #007af3;
@@ -428,7 +461,9 @@ section{
       border-radius: 12px;
       transition: transform 0.3s;
       @media(max-width: $mobile-breakpoint) {
-        width: 100vw;
+        width: 100%;
+        padding: 0;
+
       }
       
       .section-title {
@@ -446,13 +481,15 @@ section{
       .advantage-cards {
         display: flex;
         justify-content: center;
-
+        
         .advantage-card {
           border-radius: 8px;
           margin: 0 4px;
           width: rem(180);  
           transition: transform 0.3s ease;
-
+          @media(max-width: $mobile-breakpoint){
+            display: none;
+          }
           &:hover {
             transform: translateY(-5px);
           }
@@ -511,6 +548,9 @@ section{
         .advantage-card-main{
           background: #CCC;
           width:rem(692);
+          @media(max-width: $mobile-breakpoint){
+            display: block;
+          }
         }
       }
     }
@@ -531,7 +571,7 @@ section{
         }
       }
       .slide-content {
-        padding: 20px;
+        
         
         .section-title {
           font-size: 24px;

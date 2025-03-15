@@ -183,44 +183,54 @@ section{
 
 .top-banner {
   background: url('@/assets/images/banner1.png') no-repeat;
-  background-size: cover;
-  width:rem(1920);
+  background-size: 100% 100%;
+  width:100% ;
+  max-width: 1920px;
   display: flex;
   justify-content: center;
   position: relative;
-  height: rem(700);
+  height: rem(660);
 
-  @media(max-width: $mobile-breakpoint){
-    background-size: 125% 100%;
+  @media(max-width: $tablet-breakpoint){
     height: rem(400);
   }
-  
+  @media(max-width: $mobile-breakpoint){
+    background-size: 200% 100%;
+    background-position: -344px;
+    height: rem(400);
+  }
   
   .banner-container{
     width:rem(1280);
   }
   .banner-content {
-    width:rem(1280);    
+    width:100%;
+    max-width: 1280px;
     display: flex;
     align-items: center;
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 20px;
+    }
     @media (max-width: $mobile-breakpoint) {
-      width: 100vw;
+      justify-content:center;
+      padding-left: 0;
     }
     .banner-content-1{
       display: flex;
       flex-direction: column;
-      @media(max-width: $mobile-breakpoint){
+      @media(max-width: $tablet-breakpoint){
         align-items: center;
         margin-top:rem(100)
       }
-    }
 
-    .content-image{
-      width:rem(660);
-      @media(max-width: $mobile-breakpoint){
-        width: 80%;
+      .content-image{
+        width:rem(660);
+        @media(max-width: $mobile-breakpoint){
+          width: 80%;
+        }
       }
     }
+    
     .consult-btn-container{
       background: url('@/assets/images/hom_ljzx.png') no-repeat;
       background-size: cover;
@@ -246,7 +256,7 @@ section{
 
 .top-daily-news{
   border-radius: 20px;  
-  width:rem(1280);
+  max-width:1280px;
   display: flex;  
   padding: rem(45) rem(59);
   justify-content: space-between;
@@ -254,15 +264,16 @@ section{
   background-color: #FFF;
   position: relative;
   transform: translate(0, -50%);
-  @media(max-width: $mobile-breakpoint){  
+  @media(max-width: $tablet-breakpoint){      
     transform:none;
-    padding: 22px;
+    padding: 22px;    
   }
 
   .top-daily-news-item{    
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px;
     @media(max-width: $mobile-breakpoint){  
       flex-direction: column;
     }
@@ -292,7 +303,7 @@ section{
   }
 }
 .core-advantages {
-  width: rem(1280);
+  max-width: 1280px;
   margin-top:rem(-6);
   padding-bottom: rem(46);
   @media(max-width: $mobile-breakpoint){
@@ -622,7 +633,7 @@ section{
   img{
     width: rem(1280);
     @media(max-width: $mobile-breakpoint){
-      width: 90vw;
+      width: 96vw;
     }
   }
   h3 {
