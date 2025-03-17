@@ -8,7 +8,7 @@
             <img src="@/assets/images/foot1.png" alt="">
             <div class="text">
               <p>全国咨询热线： </p> 
-              <p>1231254566</p>
+              <p>{{ config.official_mobile }}</p>
             </div>          
           </div>
 
@@ -16,14 +16,14 @@
             <img src="@/assets/images/foot2.png" alt="">
             <div class="text">
               <p>地址：  </p> 
-              <p>XXX市XXX区XXXXXXXXXXXX</p>
+              <p>{{ config.official_address }}</p>
             </div>          
           </div>
           <div class="item">        
             <img src="@/assets/images/foot3.png" alt="">
             <div class="text">
               <p>Email： </p> 
-              <p> ASD125@qq.com</p>
+              <p> {{ config.official_email }}</p>
             </div>          
           </div>
 
@@ -31,14 +31,14 @@
             <img src="@/assets/images/foot4.png" alt="">
             <div class="text">
               <p>WhatsApp：  </p> 
-              <p>ASD12512323</p>
+              <p>{{ config.official_whatsapp }}</p>
             </div>          
           </div>
       </div>
 
       <div class="qrcode">
-        <img src="@/assets/images/wechat.png" alt="">
-        <img src="@/assets/images/whatsapp.png" alt="">
+        <img :src="config.official_wechat_qrcode" alt="">
+        <img :src="config.official_service_qrcode" alt="">
       </div>
       </div>
       
@@ -46,17 +46,17 @@
       
     </div>
     <div class="copyright">
-        Copyright ◎ 2017-2022 XXXXXXXXX有限公司 版权所有ICP备2000000号-0 www.XXXX        
+        {{ config.official_copyright }}       
       </div>
   </footer>
 </template>
 
 <script setup>
-const quickLinks = [
-  { text: '隐私政策', path: '/privacy' },
-  { text: '服务条款', path: '/terms' },
-  { text: '常见问题', path: '/faq' }
-]
+import { ref } from 'vue'
+import {useStore} from '@/store/dataStore'
+const store = useStore()
+const config = ref(store.config)
+
 </script>
 
 <style lang="scss" scoped>

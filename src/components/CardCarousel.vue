@@ -48,16 +48,6 @@ const cards = ref([
     icon: '/images/xing2.png'
   },
   {
-    title: '双院区办公机构',
-    description: '全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。',
-    icon: '/images/xing2.png'
-  },
-  {
-    title: '双院区办公机构',
-    description: '全格鲁吉亚唯一一家双院区独立办公室办公机构，医院认可更有保障。',
-    icon: '/images/xing2.png'
-  },
-  {
     title: '资金实力雄厚',
     description: '八大付款节点，贯穿整个项目，无需担心项目中断或机构跑路风险',
     icon: '/images/xing2.png'
