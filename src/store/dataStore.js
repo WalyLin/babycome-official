@@ -27,12 +27,15 @@ export const useStore = defineStore('main', {
       this.showMobileMenu = !this.showMobileMenu
     },
     async fetchConfig() {
-      try {
-        const response = await commonApi.getConfigs();        
-        this.config = response.data // 假设响应数据是配置对象        
-      } catch (error) {
-        console.error('Failed to fetch config:', error)
+      if(this.config.length > 0){
+        return this.config
       }
+      
+      await commonApi.getConfigs().then((response) => {
+        this.config = response.data
+      });
+      
+      return this.config            
     }
   }
 })
