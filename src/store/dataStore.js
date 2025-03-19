@@ -9,6 +9,7 @@ export const useStore = defineStore('main', {
   state: () => ({
     isMobile: false,
     showMobileMenu: false,
+    domain:'http://13.251.66.158/',
     navLinks: [
       { text: '首页', path: '/' , img:"@/assets/images/aa.png"},
       { text: '公司优势', path: '/advantage' , img:"@/assets/images/aa.png"},

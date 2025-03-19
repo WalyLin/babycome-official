@@ -21,7 +21,7 @@
       <p class="desc">这里放企业动态的简要描述详情</p>
       <div class="business-content">
         <div v-for="(item ,index ) in businessList" class="business-content-item" :key="index">
-          <img :src="item.image" alt="">
+          <img :src="store.domain + item.image" alt="">
           <p class="business-content-item-title">{{ item.title }}</p>
           <p class="business-content-item-desc">{{ item.sub_title }}</p>
           <p class="business-content-item-date">{{ item.publish_time }}</p>
@@ -35,7 +35,7 @@
       <div class="news-wrap">
         <div class="news-content">
           <div v-for="(v,k) in newsList" class="news-content-item">            
-              <img :src=" v.image " alt="" class="news-content-item-image">                        
+              <img :src=" store.domain + v.image " alt="" class="news-content-item-image">                        
               <div class="news-content-item-info">
                 <p class="news-content-item-info-title">{{ v.title }}</p>
                 <p class="news-content-item-info-desc">{{ v.sub_title }}</p>
@@ -83,6 +83,9 @@
 <script setup>  
 import { ref,inject,computed,onMounted } from 'vue'    
 import commonApi from '@/api/common';
+import { useStore } from '@/store/dataStore'
+
+const store = useStore()
 
 const isMobile = inject('isMobile')  
 
