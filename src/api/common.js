@@ -20,7 +20,7 @@ export default {
    */
   getArticals(params = {}) {
     return request({
-      url: 'official/articles',
+      url: 'official/articals',
       method: 'get',
       params
     })

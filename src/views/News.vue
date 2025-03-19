@@ -23,8 +23,8 @@
         <div v-for="(item ,index ) in businessList" class="business-content-item" :key="index">
           <img :src="item.image" alt="">
           <p class="business-content-item-title">{{ item.title }}</p>
-          <p class="business-content-item-desc">{{ item.desc }}</p>
-          <p class="business-content-item-date">{{ item.date }}</p>
+          <p class="business-content-item-desc">{{ item.sub_title }}</p>
+          <p class="business-content-item-date">{{ item.publish_time }}</p>
         </div>        
       </div>
     </section>
@@ -38,8 +38,8 @@
               <img :src=" v.image " alt="" class="news-content-item-image">                        
               <div class="news-content-item-info">
                 <p class="news-content-item-info-title">{{ v.title }}</p>
-                <p class="news-content-item-info-desc">{{ v.desc }}</p>
-                <p class="news-content-item-info-date">{{ v.date }}</p>
+                <p class="news-content-item-info-desc">{{ v.sub_title }}</p>
+                <p class="news-content-item-info-date">{{ v.publish_time }}</p>
                 <p class="news-content-item-info-btn">查看详情</p>
               </div>            
           </div>        
@@ -82,85 +82,51 @@
   
 <script setup>  
 import { ref,inject,computed,onMounted } from 'vue'    
+import commonApi from '@/api/common';
+
 const isMobile = inject('isMobile')  
 
-const businessList = [
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-  
-];
+const businessList = ref({})
 
-const newsList2 = [
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-{
-  title: '贝康国际辅助生殖资讯1',
-  date: '2024/02/25 16:24:21',
-  desc : '客服部主要负责客户接待、咨询工作，包括带新客户到医院取精抽血、照顾老客户接宝宝期间的饮⾷起居等工作。',
-  image:'/images/ys-main-1-ph.png'
-},
-  
-];
 
-// 分页相关状态
+
+
+
+
+const newsList = ref({})
 const currentPage = ref(1)
 const pageSize = ref(10)
 const totalItems = ref(0)
-// 模拟 API 数据（替换为实际接口）
-const mockData = Array.from({ length: 160 }, (_, i) => ({
-  title: `2024年单身去格鲁吉亚助孕价格大概是多少钱${i + 1}`,
-  date: `2024/03/${String(i+1).padStart(2, '0')} 12:00:00`,
-  desc: '位于第比利斯海旁边，环境优美拥有700平米超大花园，楼栋面积1300平，3层楼，居住了6位资历深厚开业就跟随我们的月嫂，为宝宝出产院后提供专业的呵护与保障。',
-  image: '/images/ys-main-1-ph.png'
-}))
-
-// 计算当前显示数据（实际应使用接口返回数据）
-const newsList = computed(() => {
-  const start = (currentPage.value - 1) * pageSize.value
-  const end = start + pageSize.value
-  return mockData.slice(start, end)
-})
 
 // 初始化总条数
 onMounted(() => {
-  totalItems.value = mockData.length
+  commonApi.getArticals({cate:1}).then(res => {
+    businessList.value = res.data.data
+  })
+
+  commonApi.getArticals({ page: currentPage.value, pageSize: pageSize.value ,cate:2}).then(res => {
+    newsList.value = res.data.data
+    totalItems.value = res.data.total
+  })
 })
 
 // 分页事件处理
 const handleCurrentChange = (val) => {
   console.log('当前页:', val)
   // 这里应调用接口获取新数据
+  commonApi.getArticals({ page: currentPage.value, pageSize: pageSize.value ,cate:2}).then(res => {
+    newsList.value = res.data.data
+    totalItems.value = res.data.total
+  })
 }
 
 const handleSizeChange = (val) => {
   console.log('每页条数:', val)
   // 这里应调用接口获取新数据
+  commonApi.getArticals({ page: currentPage, pageSize: pageSize ,cate:2}).then(res => {
+    newsList.value = res.data.data
+    totalItems.value = res.data.total
+  })
 }
 </script>
   
