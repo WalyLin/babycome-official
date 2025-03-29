@@ -157,7 +157,7 @@ body {
 
 	.mobile-menu-btn {
 		display: none;
-		background: none;
+		background: #4C6CFF;
 		border: none;
 		cursor: pointer;
 		padding: 5px;
@@ -168,10 +168,11 @@ body {
 	.bar {
 		display: block;
 		width: 25px;
-		height: 3px;
+		height: 1.5px;
 		margin: 5px 0;
 		background: white;
 		transition: 0.3s;
+		border-radius: 7px;
 		}
 	}
 
