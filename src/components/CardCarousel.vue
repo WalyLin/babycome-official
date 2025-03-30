@@ -1,29 +1,44 @@
 <template>
   <div class="advantage-cards">
-    <div ref="swiperRef" class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div
-          v-for="(card, index) in cards"
-          :key="index"
-          class="swiper-slide card"
-          @click="activeSlide = index"
-        >
-          <img :src="card.icon" :alt="card.title" :class="{ 'card-icon-sm': 0 === index }" />
+
+
+    <Swiper
+      ref="swiperRef"
+      :modules="[Navigation]"
+      :loop="true"  
+      :slides-per-view="3"
+      :space-between="10"
+      :breakpoints="swiperBreakpoints"
+      :navigation="{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }"
+    >
+      <SwiperSlide
+        v-for="(card, index) in cards"
+        :key="index"
+        class="card"
+        @click="activeSlide = index"
+      >
+        <!-- 卡片内容 -->
+        <img :src="card.icon" :alt="card.title" :class="{ 'card-icon-sm': 0 === index }" />
           <h3>{{ card.title }}</h3>
           <p>{{ card.description }}</p>
-        </div>
-      </div>
-      <div class="swiper-button-next"><img src="@/assets/images/hom_rj.png" alt=""></div>
-      <div class="swiper-button-prev"><img src="@/assets/images/hom_lj.png" alt=""></div>
-    </div>
+      </SwiperSlide>     
+    </Swiper>
+    <!-- 导航按钮需放在Swiper外部 -->
+    <div class="swiper-button-next"><img src="@/assets/images/hom_rj.png" alt=""></div>
+    <div class="swiper-button-prev"><img src="@/assets/images/hom_lj.png" alt=""></div>
+
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Swiper from'swiper';
-import { Navigation } from 'swiper/modules'; // 关键修改1：导入Navigation模块
-import'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/vue'; // 引入Vue组件
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css'; // 引入核心样式
+
 
 
 const cards = ref([
@@ -54,40 +69,29 @@ const cards = ref([
   }
 ]);
 
+const swiperBreakpoints = {
+  1024: {
+    slidesPerView: 5,
+    spaceBetween: 30
+  },
+  768: {
+    slidesPerView: 4,
+    spaceBetween: 25
+  }
+};
+
 const swiperRef = ref(null);
 const activeSlide = ref(0);
 
 onMounted(() => {
   const swiperRefValue = swiperRef.value;
-  const swiper = new Swiper(swiperRefValue, {
-      modules: [Navigation], // 关键修改3：注册模块
-      slidesPerView: 3,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      breakpoints: { // 关键修改4：添加响应式配置
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 30
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 25
-        }
-      },
-      on: {
-        slideChange: () => {
-          activeSlide.value = swiper.activeIndex;          
-        }
-      }
-    });
+
 });
 </script>
 
 <style scoped lang="scss">
 .advantage-cards {
+  position: relative;
  .swiper {
   padding: 0 40px; // 给导航按钮留出空间
     width: 100%;
@@ -175,3 +179,4 @@ onMounted(() => {
   }
   
 </style>
+
