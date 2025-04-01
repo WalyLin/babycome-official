@@ -10,7 +10,9 @@ app.use(createPinia())
 app.use(router)
 
 const store = useStore()
-store.fetchConfig() // 获取配置数据
+store.fetchConfig().then((data) => {
+  console.log('config' )  
+})
 
 app.mount('#app')
 

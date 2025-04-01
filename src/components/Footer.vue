@@ -55,8 +55,7 @@
 import { ref } from 'vue'
 import {useStore} from '@/store/dataStore'
 const store = useStore()
-const config = ref({})
-config.value = store.config
+const config = store.config
 
 </script>
 
