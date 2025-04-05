@@ -55,7 +55,10 @@
 import { ref } from 'vue'
 import {useStore} from '@/store/dataStore'
 const store = useStore()
-const config = store.config
+const config = ref({})
+store.fetchConfig().then((data)=>{
+  config.value = data
+})
 
 </script>
 

@@ -28,12 +28,17 @@ export const useStore = defineStore('main', {
       this.showMobileMenu = !this.showMobileMenu
     },
     async fetchConfig() {
-      if(this.config.length > 0){
-        return this.config
+      // 尝试从 localStorage 中读取配置
+      const storedConfig = localStorage.getItem('config');
+      if (storedConfig) {
+        this.config = JSON.parse(storedConfig);
+        return this.config;
       }
-      
+
       await commonApi.getConfigs().then((response) => {
-        this.config = response.data
+        this.config = response.data;
+        // 将获取到的配置存储到 localStorage
+        localStorage.setItem('config', JSON.stringify(this.config));
       });
       
       return this.config            
