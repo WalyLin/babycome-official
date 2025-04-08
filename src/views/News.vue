@@ -92,10 +92,6 @@ const isMobile = inject('isMobile')
 const businessList = ref({})
 
 
-
-
-
-
 const newsList = ref({})
 const currentPage = ref(1)
 const pageSize = ref(10)
@@ -114,18 +110,14 @@ onMounted(() => {
 })
 
 // 分页事件处理
-const handleCurrentChange = (val) => {
-  console.log('当前页:', val)
-  // 这里应调用接口获取新数据
+const handleCurrentChange = (val) => {  
   commonApi.getArticals({ page: currentPage.value, pageSize: pageSize.value ,cate:2}).then(res => {
     newsList.value = res.data.data
     totalItems.value = res.data.total
   })
 }
 
-const handleSizeChange = (val) => {
-  console.log('每页条数:', val)
-  // 这里应调用接口获取新数据
+const handleSizeChange = (val) => {  
   commonApi.getArticals({ page: currentPage, pageSize: pageSize ,cate:2}).then(res => {
     newsList.value = res.data.data
     totalItems.value = res.data.total

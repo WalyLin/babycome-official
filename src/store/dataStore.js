@@ -9,7 +9,7 @@ export const useStore = defineStore('main', {
   state: () => ({
     isMobile: false,
     showMobileMenu: false,
-    domain:'http://13.251.66.158/',
+    domain:import.meta.env.VITE_APP_IMAGE_DOMAIN,
     navLinks: [
       { text: '首页', path: '/' , img:"@/assets/images/aa.png"},
       { text: '公司优势', path: '/advantage' , img:"@/assets/images/aa.png"},
@@ -32,7 +32,9 @@ export const useStore = defineStore('main', {
       const storedConfig = localStorage.getItem('config');
       if (storedConfig) {
         this.config = JSON.parse(storedConfig);
-        return this.config;
+        if(this.config?.official_email){
+          return this.config;
+        }        
       }
 
       await commonApi.getConfigs().then((response) => {
