@@ -26,4 +26,11 @@ export default {
     })
   },
   
+  getArtical(params = {}) {
+    return request({
+      url: 'official/artical',
+      method: 'get',
+      params
+    })
+  },
 }

@@ -16,25 +16,12 @@
         </div>                        
     </section>   
 
-    <section class="business">
-      <p class="title">企业动态</p>
-      <p class="desc">这里放企业动态的简要描述详情</p>
-      <div class="business-content">
-        <div v-for="(item ,index ) in businessList" class="business-content-item" :key="index"  @click="getNewsDetail(item.id)">
-          <img :src="store.domain + item.image" alt="">
-          <p class="business-content-item-title">{{ item.title }}</p>
-          <p class="business-content-item-desc">{{ item.sub_title }}</p>
-          <p class="business-content-item-date">{{ item.publish_time }}</p>
-        </div>        
-      </div>
-    </section>
-
     <section class="news">
       <p class="title">格鲁吉亚动态</p>
       <p class="desc">这里放企业动态的简要描述详情</p>
       <div class="news-wrap">
         <div class="news-content">
-          <div v-for="(v,k) in newsList" class="news-content-item"  @click="getNewsDetail(v.id)">            
+          <div v-for="(v,k) in newsList" class="news-content-item">            
               <img :src=" store.domain + v.image " alt="" class="news-content-item-image">                        
               <div class="news-content-item-info">
                 <p class="news-content-item-info-title">{{ v.title }}</p>
@@ -77,15 +64,6 @@
       </div>
       
     </section>
-
-    <el-dialog v-model="newsDetailVisible" width="80%">      
-      <div>
-        <h2 class="news-detail-title">{{ newsDetail.title }}</h2>        
-        <div class="news-detail-content" v-html="newsDetail.detail"></div>
-        <p class="news-detail-date">{{newsDetail.publish_time}}</p>          
-      </div>                      
-    </el-dialog>
-    
   </div>
 </template>
   
@@ -105,8 +83,7 @@ const newsList = ref({})
 const currentPage = ref(1)
 const pageSize = ref(10)
 const totalItems = ref(0)
-const newsDetail = ref({'content':''})
-const newsDetailVisible = ref(false)
+
 // 初始化总条数
 onMounted(() => {
   commonApi.getArticals({cate:1}).then(res => {
@@ -133,22 +110,6 @@ const handleSizeChange = (val) => {
     totalItems.value = res.data.total
   })
 }
-
-const  getNewsDetail = (id) => { 
-  const loading = ElLoading.service({
-    lock: true,
-    text: 'Loading',
-    background: 'rgba(0, 0, 0, 0.7)',
-  })
-  commonApi.getArtical({id:id}).then(res => {
-    newsDetail.value = res.data
-    newsDetailVisible.value = true
-  }).finally(() => {
-      loading.close()
-  })
-  
-}
-
 </script>
   
 <style>
@@ -349,60 +310,7 @@ section{
   align-items: center;
 }
 
-.business{
 
-  .business-content{
-    max-width: 1280px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    @media(max-width: $mobile-breakpoint){
-      width: 90%;
-      justify-content: center;
-    }
-    
-
-    &-item{
-      cursor:pointer;
-      background-color: #FFF;
-      border-radius: rem(20);
-      overflow: hidden;
-      width: 32%;
-      display: flex;
-      flex-direction: column;
-      
-      @media(max-width: $mobile-breakpoint){
-        width: 90%;                
-        margin-bottom: 20px;
-      }
-
-      img{
-        width: 100%;
-        height: rem(252);
-
-      }
-      p{
-        padding: 0 rem(30);
-      }
-
-      &-title{
-        color: #050F3F;
-        font-size: rem(18);
-        font-weight: bold;
-        margin: rem(20) 0;
-      }
-
-      &-desc,&-date{
-        color: #80808C;
-        font-size: rem(16);
-        margin-bottom: rem(20);      
-      }
-    }
-
-  }
-}
 
 .news-wrap{
   width: 100%;
@@ -427,7 +335,6 @@ section{
     
 
     &-item{
-      cursor:pointer;
       width: 100%;
       background-color: #FFF;
       padding: rem(40) 0;
@@ -481,19 +388,5 @@ section{
     }
 
   }
-}
-
-
-.news-detail-title{
-  text-align: center;
-  line-height: 24px;
-  height: 24px;
-}
-.news-detail-content{
-  white-space: break-spaces;
-  padding: rem(50) rem(10);
-}
-.news-detail-date{
-  padding: 0 rem(10);
 }
 </style>
