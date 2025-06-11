@@ -25,10 +25,18 @@ export default {
       params
     })
   },
-  
+
   getArtical(params = {}) {
     return request({
       url: 'official/artical',
+      method: 'get',
+      params
+    })
+  },
+
+  showImage(params = {}) {
+    return request({
+      url: 'showImage',
       method: 'get',
       params
     })
