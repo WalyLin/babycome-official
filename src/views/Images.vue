@@ -164,7 +164,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     img{
-        width: rem(200);
+        // width: rem(200);
         margin-bottom: 15px;
         margin-left: 2.5%;
     }
